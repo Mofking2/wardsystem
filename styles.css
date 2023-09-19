@@ -1,0 +1,145 @@
+/* Reset some default styles to ensure consistent rendering across browsers */
+body, h1, h2, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+background: rgb(0,123,255);
+background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(9,9,121,1) 65%, rgba(0,0,0,1) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	
+}
+#logoDiv{
+	margin-left:5%;
+}
+#logo{
+
+	width:50px;
+	height:50px;
+
+}
+
+
+nav ul {
+    list-style-type: none;
+	
+	margin-right:30%;
+	width:500px;
+	margin-top:3%;
+	
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+	
+}
+
+/* Main content styles */
+.main {
+    padding: 2rem;
+	background-color: #fff;
+}
+
+.hero {
+    background-color: #fff;
+    padding: 5rem;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    text-align: center;
+	background:url("images/pic.jpg");
+	
+	 background-repeat: no-repeat;
+	
+  background-size: 300px 290px;
+
+  background-position-y: 5%;
+  background-position-x:35.5%;
+ 
+  height:290px;
+
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+	
+}
+
+/* Form styles */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+form input[type="text"] {
+    width: 70%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+	border-radius: 5px;
+}
+
+/* Search results styles.search-results {
+    margin-top: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+	
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+	height:auto;
+} */
+
+
+/* Footer styles */
+footer {
+width:100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #09092f;
+    color: #fff;
+	  position: fixed;
+  left: 0;
+  bottom: 0;
+  
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        padding: 1rem;
+    }
+}
