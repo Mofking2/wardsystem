@@ -18,15 +18,11 @@ async function initMap() {
     map: map,
     title: 'Default Location',
   });
-document.getElementById('feedback-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the form from actually submitting
-    alert('Thank you for your feedback!');
-    // You can send the form data to a server, perform validation, or other actions here.
-});
+
 
     // Add an event listener to the search button
   document.getElementById('searchButton').addEventListener('click', function (event) {
-	   event.preventDefault()
+	   event.preventDefault();
     const locationInput = document.getElementById('locationInput').value;
     if (locationInput) {
       // Use the Geocoding API to convert the location input to coordinates
