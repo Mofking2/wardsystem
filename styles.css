@@ -7,9 +7,9 @@ body, h1, h2, p, ul, li, form {
 /* Set a background color and font for the entire page */
 body {
     font-family: Arial, sans-serif;
-  
+	font-size:16px;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.6rem;
 	 overflow-y: scroll;
 	 height:auto;
 }
@@ -58,11 +58,15 @@ b{
 }
 
 /* Main content styles */
-.main {
-    padding: 2rem;
-	
-}
 
+.rate{
+	padding-left:1%;
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:0%;
+
+
+}
 .hero {
     background-color: #fff;
     padding: 5rem;
@@ -83,7 +87,7 @@ b{
 }
 
 .hero h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
 	
 }
@@ -145,7 +149,16 @@ form button {
     border-radius: 5px;
 	height:auto;
 } */
+.about{
+	border:1px solid lightgrey;
+	border-radius:4px;
 
+}
+.about:hover{
+	border:1px solid #007bff;
+	border-radius:4px;
+
+}
 
 /* Footer styles */
 footer {
@@ -162,7 +175,37 @@ width:100%;
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-    .hero {
-        padding: 1rem;
-    }
+
+	body{
+		
+		font-size: 0.7rem;
+	}
+		.hero h2{
+  font-size: 1.2rem;
+
+	
+}
+	.hero label{
+  font-size: 0.7rem;
+
+	
+}
+   .search-results{
+		height:600px;
+   }
+   footer {
+width:100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #09092f;
+    color: #fff;
+	margin-bottom:auto;
+  
+}
+.hero {
+  
+	background:white;
+}
+
+
 }

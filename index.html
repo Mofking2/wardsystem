@@ -6,12 +6,15 @@
     <title>Finder</title>
     <link rel="stylesheet" href="styles.css">
 	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	 
+	 <script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 </head>
 <body>
 <nav class="navbar sticky-top ">
   <div class="container">
         <a class="navbar-brand nav-link" id="logoDiv" href="#"><img id="logo"src="images/placeholder.png" class="name" width="" height="" alt="..."><b style="">Finder</b></a>
-     <div class="d-flex d-none d-sm-block" >
+     <div class="d-flex d-none d-md-block" >
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="feedback.html">Feedback</a></li>
@@ -38,20 +41,44 @@
             <!-- Ward information will be displayed here -->
 			<p><i><b>Results information will be displayed here</b></i></p>
         </div>
-		<div class=" p-5">
-		text here
+		<div class="container p-3 ">
+			<p class=" text-center"><i>Results information will be displayed here</i></p>
+			<div id=''>
+				<p class="rate">Rate</p>
+				<div id='rating'>
+			
+				</div>	
+			</div>
 		</div>
         
     </main>
+	<div class="container about p-3 ">
+		<div class="col">
+			<div class="row">
+				<h6 class="text-center">About Us</h6>
+				<div class="">
+				<p>navigation website  all about getting users their location, with the least amount of friction possible<br>It provide a visual representation of an area allowing us to see landmarks, roads, and other features that can help us find our way><br>lighten the burden that life becomes when you lose your way while in an unfamiliar place<br> Lastly it save you from asking directions from random strangers, or ending up in a wrong place following the said stranger's given direction</p>
+				</div>
+			<div>
+		<div>
+	<div>
    
     <footer class="footer mt-auto">
         <p>&copy; 2023 Finder App</p>
     </footer>
 	
+	
+	<script>
+jSuites.rating(document.getElementById('rating'), {
+    number: 7,
+    tooltip: [ 1, 2, 3, 4, 5, 6, 7],
+})
+</script>
 <script>
   (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
     key: "AIzaSyBwdLQxIFbOE7h0SZdTcOt8P7DBueyAQxk",
     v: "weekly",
+	
     // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
     // Add other bootstrap parameters as needed, using camel case.
   });
