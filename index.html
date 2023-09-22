@@ -26,20 +26,20 @@
     
     
     <main>
-        <section class="hero" id="">
-		
-            <h2>Find Your Item</h2>
+        <section class="hero align-items-center" id="">
+			
+            <h2>Search Place</h2>
             <form action="find-ward.php" method="post">
-                <label id="addressInput">Enter item you are searching:</label>
+                <label id="addressInput">Enter address/place you are searching for<small></small></label>
                 <input type="text" id="locationInput" name="location" required>
                 <button id="searchButton" >Search</button>
             </form>
         </section>
-		<div id="spinner" class="spinner"></div>
+		
 
          <div class="search-results text-center pt-2" id="map" >
             <!-- Ward information will be displayed here -->
-			<p><i><b>Results information will be displayed here</b></i></p>
+			<p><i><b>Results information will be displayed here</b></i></p><div id="spinner" class="spinner"></div>
         </div>
 		<div class="container p-3 ">
 			<p class=" text-center"><i>Results information will be displayed here</i></p>
