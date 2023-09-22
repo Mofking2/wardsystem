@@ -4,7 +4,7 @@ let marker;
 var defaultZoom = 5
 async function initMap() {
 	
-
+	document.getElementById('spinner').style.display = 'block';
   const { Map } = await google.maps.importLibrary("maps");
 
   map = new Map(document.getElementById("map"), {
@@ -13,6 +13,7 @@ async function initMap() {
 	gestureHandling: "greedy",
 	
   });
+  
    // Create a marker at the default location,-34.397,150.644
   marker = new google.maps.Marker({
     position: { lat: -30.5595, lng: 22.9375 },
@@ -20,7 +21,7 @@ async function initMap() {
     title: 'Default Location',
   });
 
-
+document.getElementById('spinner').style.display = 'none';
     // Add an event listener to the search button
   document.getElementById('searchButton').addEventListener('click', function (event) {
 	   event.preventDefault();
@@ -106,7 +107,7 @@ async function initMap() {
 				  // Adjust this value as needed for the desired zoom level
 				  //map.setZoom(9);
 				  
-				   document.getElementById('spinner').style.display = 'none';
+				   
 				} else {
 				  alert('Location not found. Please enter a valid location.');
 				}
