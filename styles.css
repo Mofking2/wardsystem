@@ -10,7 +10,7 @@ body, h1, h2, p, ul, li, form {
 /* Set a background color and font for the entire page */
 body {
     font-family: Arial, sans-serif;
-	font-size:16px;
+	font-size:5vw;
     color: #333;
     line-height: 1.6rem;
 	 overflow-y: scroll;
@@ -129,6 +129,15 @@ form button {
     font-weight: bold;
 	border-radius: 5px;
 }
+form button:active {
+    border:1px solid black;
+}
+
+form button:hover {
+    background-color: #fff;
+    color: #007bff;
+	border:1px solid #007bff;
+}
 .spinner {
   border: 4px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
@@ -167,11 +176,7 @@ form button {
 	border-radius:4px;
 
 }
-.about:hover{
-	border:1px solid #007bff;
-	border-radius:4px;
 
-}
 
 /* Footer styles */
 footer {
@@ -185,11 +190,11 @@ width:100%;
 }
 
 /* Responsive design for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
 
 	body{
 		
-		font-size: 0.6rem;
+		font-size:5vw;
 	}
 	
 	
@@ -215,6 +220,7 @@ width:100%;
 .hero {
   
 	background:white;
+	height:320px;
 }
 .col.about{
 padding:10px;
@@ -226,6 +232,11 @@ padding:10px;
 		background-size:auto;
 	
 }
+
+.message{
+	width:auto;
+}
+
 }
 
 

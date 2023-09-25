@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finder</title>
     <link rel="stylesheet" href="styles.css">
@@ -18,7 +18,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse d-flex d-none d-md-block justify-content-end " id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse justify-content-end  " id="navbarNavAltMarkup">
       <div class="navbar-nav  " id ="white">
         <a class="nav-link "  href="#hero">Home</a>
 		<a class="nav-link" href="feedback.html">Feedback</a>
@@ -34,23 +34,23 @@
     
     
     <main>
-        <section class="hero align-items-center pt-5" id="">
+        <section class="hero align-items-center pt-3" id="hero">
 			
             <h2>Search Place</h2>
-            <form  autocomplete="on">
+            <form  action="" method="post" class ="" autocomplete="on">
 				<label for="location">Enter your street address or location:</label>
-                <input type="text" id="addressInput" placeholder="Enter an address" >
+                <input type="text" id="addressInput" placeholder="Enter an address" required/>
 				<button id="searchButton">Search</button>
 
 				<div >
-					<p class=" text-center "><i id="displayErr"></i></p>
-					<p class=" text-center "><i id="display"></i></p>
+					<p class="message text-center "><i id="displayErr"></i></p>
+					<p class="message text-center "><i id="display"></i></p>
 				</div>
             </form>
 			
         </section>
 		
-	
+		<div id="spinner"><div>
          <div class="search-results text-center pt-2" id="map" >
             <!-- Ward information will be displayed here -->
 			<p><i><b>Results information will be displayed here</b></i></p>

@@ -5,7 +5,7 @@ var defaultZoom = 5
 
 function initMap() {
 	
-
+	document.getElementById('spinner').style.display = 'block';
 	
 	map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -30.5595 , lng:  22.9375 },
@@ -108,7 +108,12 @@ function initMap() {
         }
     });
 }
+function spinner1(){
+			
+				document.getElementById('spinner').style.display = 'block';
 
+			
+}
 var show = function() {
     // Show the loading spin
     jSuites.loading.show();
@@ -116,12 +121,15 @@ var show = function() {
     setTimeout(function() {
         // Hide
         jSuites.loading.hide();
-    }, 4000);
+    }, 6000);
 }
 	
 // Load the map when the page is fully loaded
 window.onload = function () {
+	
+	
 show();
+spinner1();
   initMap();
 
 };
