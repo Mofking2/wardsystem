@@ -33,24 +33,7 @@
     </div>
   </div>
 </nav>
-<nav class="navbar bgcolor sticky-top navbar-expand-lg navbar-dark" >
-  <div class="container ">
-     <a class="navbar-brand" href="#"><img id="logo"src="images/placeholder.png" class="name" width="" height="" alt="..."><b style="">Finder</b></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-flex d-none d-md-block justify-content-end " id="navbarNavAltMarkup">
-      <div class="navbar-nav  " id ="white">
-        <a class="nav-link "  href="#hero">Home</a>
-		<a class="nav-link" href="feedback.html">Feedback</a>
-        <a class="nav-link" href="#missions">Missions</a>
-         <a class="nav-link" href="about.html">About</a>
-		<a class="nav-link " href="#gallery" >Gallery</a>
-		<a class="nav-link " href="#contact">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</nav>
+
 
     
     
@@ -71,7 +54,7 @@
 			
         </section>
 		
-	
+	<div id="spinner" class="spinner"></div>
          <div class="search-results text-center pt-2" id="map" >
             <!-- Ward information will be displayed here -->
 			<p><i><b>Results information will be displayed here</b></i></p>
@@ -98,7 +81,7 @@
 			</div>
 		</div>
 	</div>
-	
+
     <footer class="footer p-2 mt-3">
         <p>&copy; 2023 Finder App</p>
     </footer>
@@ -130,7 +113,6 @@ jSuites.rating(document.getElementById('rating'), {
 	<script src="maps.js">
 
 </script>	
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 </body>
 </html>

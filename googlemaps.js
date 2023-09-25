@@ -23,8 +23,12 @@ async function initMap() {
 
 document.getElementById('spinner').style.display = 'none';
     // Add an event listener to the search button
+
   document.getElementById('searchButton').addEventListener('click', function (event) {
-	   event.preventDefault();
+	  
+	  
+	  event.preventDefault();
+	  
     const locationInput = document.getElementById('locationInput').value;
 	
 
@@ -37,7 +41,7 @@ document.getElementById('spinner').style.display = 'none';
 		
 		  var addressComponents = results[0].address_components;
 			console.log(addressComponents,"Addresssss")
-                        var addressComponents = results[0].address_components;
+                        
 
                     var isCity = false;
                     var isProvince = false;
@@ -70,11 +74,17 @@ document.getElementById('spinner').style.display = 'none';
                             defaultZoom = 15;
                             break;
 							}
+							if (component.types.includes('country') ) {
+                            // Zoom to suburb but not city level
+                            defaultZoom = 5;
+                            break;
+							}
 							else {
 							defaultZoom = 1;
 						}
                     }
 
+					
                     // Set the map center to the location of the entered address
                     map.setCenter(location);
 
@@ -126,6 +136,3 @@ document.getElementById('spinner').style.display = 'none';
 		
 initMap();
 
-window.onload = function () {
-	spinner1()
-};

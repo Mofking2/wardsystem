@@ -1,3 +1,6 @@
+
+$navbar-light-active-color:white;
+
 /* Reset some default styles to ensure consistent rendering across browsers */
 body, h1, h2, p, ul, li, form {
     margin: 0;
@@ -13,6 +16,7 @@ body {
 	 overflow-y: scroll;
 	 height:auto;
 }
+
 
 /* Header styles */
 .navbar {
@@ -41,18 +45,22 @@ nav ul {
     list-style-type: none;	
 }
 
-nav ul li {
+nav ul li a {
     display: inline;
     margin-right: 1rem;
-}
-
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
 	
 }
+.navbar-nav a{
+font-weight: bold;
+color:#fff;
+}
+
+
+
+.nav-item a{color:white;font-weight: bold;}
+.nav-item a:hover{color:white;}
+
+
 b{
 	color:white;
 }
@@ -154,7 +162,7 @@ form button {
     border-radius: 5px;
 	height:auto;
 } */
-.about{
+.col.about{
 	border:1px solid lightgrey;
 	border-radius:4px;
 
@@ -172,9 +180,7 @@ width:100%;
     padding: 1rem 0;
     background-color: #09092f;
     color: #fff;
-	  position: fixed;
-  left: 0;
-  bottom: 0;
+	
   
 }
 
@@ -183,8 +189,10 @@ width:100%;
 
 	body{
 		
-		font-size: 0.7rem;
+		font-size: 0.6rem;
 	}
+	
+	
 		.hero h2{
   font-size: 1.2rem;
 
@@ -195,9 +203,6 @@ width:100%;
 
 	
 }
-   .search-results{
-		height:600px;
-   }
    footer {
 width:100%;
     text-align: center;
@@ -211,6 +216,16 @@ width:100%;
   
 	background:white;
 }
-
+.col.about{
+padding:10px;
+	width:auto;
 
 }
+.search-results{
+		height:400px;
+		background-size:auto;
+	
+}
+}
+
+
