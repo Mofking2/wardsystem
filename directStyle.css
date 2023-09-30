@@ -1,0 +1,146 @@
+/* Reset some default styles for consistency */
+
+.container.directions {
+	align-items:end;
+
+}
+/* Set a background color and font for the entire page */
+body {
+    font-family: Arial, sans-serif;
+	font-size:5vw;
+    color: #333;
+    line-height: 1.6rem;
+	 overflow-y: scroll;
+	 height:auto;
+}
+
+
+/* Header styles */
+.navbar {
+background: rgb(0,123,255);
+background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(9,9,121,1) 65%, rgba(0,0,0,1) 100%);
+    color: #fffff;
+    text-align: center;
+    padding: 1rem 0;
+	
+	
+	
+}
+.name {
+filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(156deg) brightness(100%) contrast(103%);
+}
+
+#logo{
+
+	width:50px;
+	height:50px;
+	color:white;
+}
+
+
+nav ul {
+    list-style-type: none;	
+}
+
+nav ul li a {
+    display: inline;
+    margin-right: 1rem;
+	
+}
+.navbar-nav a{
+font-weight: bold;
+color:#fff;
+}
+
+
+
+.nav-item a{color:white;font-weight: bold;}
+.nav-item a:hover{color:white;}
+
+
+b{
+	color:white;
+}
+
+/* Main content styles */
+
+.rate{
+	padding-left:1%;
+	font-size:12px;
+	font-weight:bold;
+	margin-bottom:0%;
+
+
+}
+.hero {
+    background-color: #fff;
+    padding: 5rem;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    text-align: center;
+
+ 
+  height:290px;
+
+}
+
+.banner{
+ height: 100vh;
+  display: flex;
+  margin:auto auto;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.15)  url(images/pic.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: white;}
+.hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+	
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  
+}
+/* Section styles */
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#map-section {
+    flex-basis: 70%;
+}
+
+#content-section {
+    flex-basis: 28%;
+}
+
+/* Section styles */
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer styles */
+footer {
+width:100%;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #09092f;
+    color: #fff;
+	
+  
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finder</title>
+    <link rel="stylesheet" href="directStyle.css">
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+	 <script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+</head>
+<body>
+
+<nav class="navbar bgcolor sticky-top navbar-expand-lg navbar-dark" >
+  <div class="container ">
+     <a class="navbar-brand" href="index.html"><img id="logo"src="images/placeholder.png" class="name" width="" height="" alt="..."><b style="">Finder</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end  " id="navbarNavAltMarkup">
+      
+    </div>
+  </div>
+</nav>
+
+    
+    
+      <header>
+       
+    </header>
+
+    <main>
+        <section id="map-section">
+            <h2>Find Directions</h2>
+			 <input type="text" id="startInput" placeholder="Enter starting address">
+    <input type="text" id="endInput" placeholder="Enter destination address">
+    <button onclick="getDirections()">Get Directions</button>
+    <button onclick="navigateToEndpoint()">Directions</button>
+			
+            <div id="map" style="height: 400px; width: 100%;"></div>
+            <div id="directionsPanel"></div>
+        </section>
+
+        <section class="text-center" id="content-section">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor eros quis dui varius, at vehicula justo auctor.</p>
+
+            <h2>Contact Us</h2>
+            <address>
+                Email: <a href="mailto:contact@example.com">contact@example.com</a><br>
+                Phone: <a href="tel:+123456789">+1 (234) 567-89</a>
+            </address>
+        </section>
+    </main>
+
+	
+    <footer class="footer p-2 mt-3">
+        <p>&copy; 2023 Finder App</p>
+    </footer>
+	
+	
+
+	
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwdLQxIFbOE7h0SZdTcOt8P7DBueyAQxk&callback=initMap"
+    async defer></script>
+
+    <script>
+        var map;
+        var geocoder;
+        var directionsService;
+        var directionsRenderer;
+        var startMarker;
+        var endMarker;
+		var speechSynthesis = window.speechSynthesis;
+
+		
+		document.getElementById("startInput").addEventListener("click", function(){ 
+				console.log("start button is clicked");
+
+		});
+		
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -30.5595 , lng:  22.9375 }, // Default to center of the world
+                zoom: 5,
+				gestureHandling: "greedy"				// Default zoom level
+            });
+			
+			  marker = new google.maps.Marker({
+			position: { lat: -30.5595 , lng:  22.9375 },
+			map: map,
+			title: 'Default location',
+		});
+            geocoder = new google.maps.Geocoder();
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer({
+                map: map,
+                panel: document.getElementById('directionsPanel')
+            });
+        }
+		
+        function getDirections() {
+            var startAddress = document.getElementById('startInput').value;
+													  // Check if geolocation is available in the browser
+  
+			var endAddress = document.getElementById('endInput').value;
+
+            geocoder.geocode({ 'address': startAddress }, function (startResults, startStatus) {
+                if (startStatus === 'OK') {
+                    geocoder.geocode({ 'address': endAddress }, function (endResults, endStatus) {
+                        if (endStatus === 'OK') {
+                            var startLocation = startResults[0].geometry.location;
+                            var endLocation = endResults[0].geometry.location;
+
+                            var request = {
+                                origin: startLocation,
+                                destination: endLocation,
+                                travelMode: 'DRIVING' // You can change the travel mode (e.g., 'WALKING', 'TRANSIT')
+                            };
+
+                            directionsService.route(request, function (response, status) {
+                                if (status === 'OK') {
+                                    directionsRenderer.setDirections(response);
+									
+									var steps = response.routes[0].legs[0].steps;
+										speakDirections(steps);
+
+                                    // Place markers for the start and end locations
+                                    if (startMarker) {
+                                        startMarker.setMap(null);
+                                    }
+                                    if (endMarker) {
+                                        endMarker.setMap(null);
+                                    }
+                                    startMarker = new google.maps.Marker({
+                                        position: startLocation,
+                                        map: map,
+                                        label: 'A' // Marker label for start
+                                    });
+                                    endMarker = new google.maps.Marker({
+                                        position: endLocation,
+                                        map: map,
+                                        label: 'B' // Marker label for end
+                                    });
+                                } else {
+                                    alert('Directions request failed due to ' + status);
+                                }
+                            });
+                        } else {
+                            alert('Geocode for destination was not successful for the following reason: ' + endStatus);
+                        }
+                    });
+                } else {
+                    alert('Geocode for start location was not successful for the following reason: ' + startStatus);
+                }
+            });
+        }
+		 function speakDirections(steps) {
+            if (speechSynthesis && steps && steps.length > 0) {
+                var stepIndex = 0;
+
+                function speakStep() {
+                    if (stepIndex < steps.length) {
+                        var step = steps[stepIndex];
+                        var instructions = step.instructions;
+
+                        var utterance = new SpeechSynthesisUtterance(instructions);
+                        speechSynthesis.speak(utterance);
+
+                        utterance.onend = function () {
+                            stepIndex++;
+                            speakStep();
+                        };
+                    }
+                }
+
+                speakStep();
+            }
+		}
+
+        function navigateToEndpoint() {
+            var endAddress = document.getElementById('endInput').value;
+
+            // Open the navigation link using the user's default navigation app or service
+            var navigationLink = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(endAddress);
+            window.location.href = navigationLink;
+        }
+    </script>
+</body>
+</html>

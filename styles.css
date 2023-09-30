@@ -6,7 +6,10 @@ body, h1, h2, p, ul, li, form {
     margin: 0;
     padding: 0;
 }
+.container.directions {
+	align-items:end;
 
+}
 /* Set a background color and font for the entire page */
 body {
     font-family: Arial, sans-serif;
@@ -134,6 +137,37 @@ form button:active {
 }
 
 form button:hover {
+    background-color: #fff;
+    color: #007bff;
+	border:1px solid #007bff;
+}
+ #directions {
+	background-color: #ffff;
+  
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+	border-radius: 5px;
+
+
+}
+#directions a {
+	background-color: #007bff;
+    color: #ffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+	border-radius: 5px;
+	text-decoration:none;
+
+}
+#directions a:active {
+    border:1px solid black;
+}
+
+#directions a:hover {
     background-color: #fff;
     color: #007bff;
 	border:1px solid #007bff;
